@@ -1,13 +1,9 @@
-# NestJS Google Drive Module 📁
+# NestJS Google Drive Module
 
-[![npm version](https://badge.fury.io/js/%40mag123c%2Fnestjs-google-drive.svg)](https://badge.fury.io/js/%40mag123c%2Fnestjs-google-drive)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A production-ready, type-safe Google Drive integration module for NestJS applications with comprehensive file management capabilities.
+## Current Implementation
 
-## 🎯 Current Implementation (v1.0.0)
-
-### ✅ Implemented Features
+### Implemented Features
 - **File Upload**: Upload files from Buffer or Readable streams
 - **File Download**: Download files as Readable streams  
 - **File Metadata**: Get file information (name, size, MIME type, etc.)
@@ -17,14 +13,14 @@ A production-ready, type-safe Google Drive integration module for NestJS applica
 - **Error Handling**: Comprehensive error handling with custom error classes
 - **TypeScript Support**: Full TypeScript support with type definitions
 
-### 🚧 Not Implemented (Future Versions)
+### Not Implemented (Future Versions)
 - File deletion
 - Folder creation/management
 - File sharing/permissions
 - File listing/search
 - Batch operations
 
-## 🔧 Architecture
+## Architecture
 
 ```
 src/
@@ -39,19 +35,19 @@ src/
 
 This modular structure allows for easy extension and maintenance.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
 ```bash
-npm install @mag123c/nestjs-google-drive
-
+npm install nestjs-google-drive-sdk
+```
 
 ### Basic Setup
 
 ```typescript
 import { Module } from '@nestjs/common';
-import { GoogleDriveModule } from '@mag123c/nestjs-google-drive';
+import { GoogleDriveModule } from 'nestjs-google-drive-sdk';
 
 @Module({
   imports: [
@@ -73,7 +69,7 @@ export class AppModule {}
 
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { GoogleDriveService } from '@mag123c/nestjs-google-drive';
+import { GoogleDriveService } from 'nestjs-google-drive-sdk';
 import { createReadStream } from 'fs';
 
 @Injectable()
@@ -112,7 +108,7 @@ export class FileService {
 }
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 ### Synchronous Configuration
 
@@ -158,7 +154,7 @@ GoogleDriveModule.forRootAsyncGlobal({
 })
 ```
 
-## 📋 API Reference
+## API Reference
 
 ### GoogleDriveService
 
@@ -195,7 +191,7 @@ Get file metadata including name, size, MIME type, creation/modification dates.
 
 Test connection to Google Drive API. Returns `true` if connected successfully.
 
-## 🔧 Utility Functions
+## Utility Functions
 
 The module exports helpful utility functions:
 
@@ -205,7 +201,7 @@ import {
   getMimeTypeFromExtension, 
   formatFileSize,
   bufferToStream 
-} from '@mag123c/nestjs-google-drive';
+} from 'nestjs-google-drive-sdk';
 
 // Validate file name (checks for invalid characters)
 const isValid = validateFileName('my-file.pdf'); // true
@@ -220,7 +216,7 @@ const formatted = formatFileSize(1048576); // '1 MB'
 const stream = bufferToStream(buffer);
 ```
 
-## 🛡️ Error Handling
+## Error Handling
 
 The module provides specific error classes:
 
@@ -230,7 +226,7 @@ import {
   FileDownloadError, 
   AuthenticationError,
   ConfigurationError 
-} from '@mag123c/nestjs-google-drive';
+} from 'nestjs-google-drive-sdk';
 
 try {
   await googleDriveService.uploadFile(stream, options);
@@ -245,22 +241,7 @@ try {
 }
 ```
 
-## 🧪 Testing
-
-The module includes comprehensive tests. Run them with:
-
-```bash
-# Run all tests
-npm test
-
-# Run tests with coverage
-npm run test:coverage
-
-# Run tests in watch mode
-npm run test:watch
-```
-
-## 🔗 Getting Google Drive Credentials
+## Getting Google Drive Credentials
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
 2. Create a new project or select an existing one
@@ -272,7 +253,7 @@ npm run test:watch
 
 **Detailed guide**: [Google Drive API Quickstart](https://developers.google.com/drive/api/quickstart/nodejs)
 
-## 📝 Examples
+## Examples
 
 ### Upload from Express Multer
 
@@ -323,36 +304,6 @@ async downloadFile(
 }
 ```
 
-## 📈 Roadmap
-
-### v1.1.0 (Planned)
-- File deletion functionality
-- Better error messages with more context
-
-### v1.2.0 (Planned)
-- Folder creation and management
-- File listing with filtering
-
-### v2.0.0 (Future)
-- File sharing and permissions
-- Batch operations
-- Advanced search capabilities
-
-## 🤝 Contributing
-
-Contributions are welcome! This module is designed to be extensible:
-
-1. Fork the repository
-2. Create a feature branch
-3. Add tests for new functionality
-4. Ensure all tests pass
-5. Submit a pull request
-
-## 📄 License
+## License
 
 MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-**Perfect for**: Simple file upload/download operations with Google Drive in NestJS applications.  
-**Built with**: TypeScript, NestJS, Google APIs, comprehensive error handling and testing. 

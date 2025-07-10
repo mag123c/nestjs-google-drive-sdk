@@ -1,5 +1,5 @@
 {
-  "name": "@mag123c/nestjs-google-drive",
+  "name": "nestjs-google-drive-sdk",
   "version": "1.0.0",
   "description": "Production-ready NestJS module for Google Drive integration with comprehensive file management capabilities",
   "main": "dist/index.js",
@@ -29,9 +29,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mag123c/nestjs-google-drive.git"
+    "url": "https://github.com/mag123c/nestjs-google-drive-sdk.git"
   },
-  "homepage": "https://github.com/mag123c/nestjs-google-drive#readme",
+  "homepage": "https://github.com/mag123c/nestjs-google-drive-sdk#readme",
   "packageManager": "pnpm@10.12.4",
   "engines": {
     "node": ">=16.0.0",
