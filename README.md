@@ -1,6 +1,6 @@
 # NestJS Google Drive Module 📁
 
-[![npm version](https://badge.fury.io/js/%40nestjs-community%2Fgoogle-drive.svg)](https://badge.fury.io/js/%40nestjs-community%2Fgoogle-drive)
+[![npm version](https://badge.fury.io/js/%40mag123c%2Fnestjs-google-drive.svg)](https://badge.fury.io/js/%40mag123c%2Fnestjs-google-drive)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A production-ready, type-safe Google Drive integration module for NestJS applications with comprehensive file management capabilities.
@@ -44,21 +44,14 @@ This modular structure allows for easy extension and maintenance.
 ### Installation
 
 ```bash
-# npm
-npm install @nestjs-community/google-drive
+npm install @mag123c/nestjs-google-drive
 
-# yarn  
-yarn add @nestjs-community/google-drive
-
-# pnpm (recommended)
-pnpm add @nestjs-community/google-drive
-```
 
 ### Basic Setup
 
 ```typescript
 import { Module } from '@nestjs/common';
-import { GoogleDriveModule } from '@nestjs-community/google-drive';
+import { GoogleDriveModule } from '@mag123c/nestjs-google-drive';
 
 @Module({
   imports: [
@@ -80,7 +73,7 @@ export class AppModule {}
 
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { GoogleDriveService } from '@nestjs-community/google-drive';
+import { GoogleDriveService } from '@mag123c/nestjs-google-drive';
 import { createReadStream } from 'fs';
 
 @Injectable()
@@ -212,7 +205,7 @@ import {
   getMimeTypeFromExtension, 
   formatFileSize,
   bufferToStream 
-} from '@nestjs-community/google-drive';
+} from '@mag123c/nestjs-google-drive';
 
 // Validate file name (checks for invalid characters)
 const isValid = validateFileName('my-file.pdf'); // true
@@ -237,7 +230,7 @@ import {
   FileDownloadError, 
   AuthenticationError,
   ConfigurationError 
-} from '@nestjs-community/google-drive';
+} from '@mag123c/nestjs-google-drive';
 
 try {
   await googleDriveService.uploadFile(stream, options);

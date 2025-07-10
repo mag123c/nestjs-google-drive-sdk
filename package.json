@@ -1,5 +1,5 @@
 {
-  "name": "@nestjs-community/google-drive",
+  "name": "@mag123c/nestjs-google-drive",
   "version": "1.0.0",
   "description": "Production-ready NestJS module for Google Drive integration with comprehensive file management capabilities",
   "main": "dist/index.js",
